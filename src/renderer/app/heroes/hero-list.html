@@ -1,0 +1,10 @@
+<h2>Routing-Test</h2>
+<h4>Click a hero</h4>
+<div class="row col-xs-6">
+  <li class="item-click list-group-item" *ngFor="let hero of heroes | async"
+    [class.selected]="isSelected(hero)"
+    (click)="onSelect(hero)">
+    <span class="badge">{{ hero.id }}</span> {{ hero.name }}
+  </li>
+  <button class="btn btn-default" routerLink="/market">Go to Market</button>
+</div>

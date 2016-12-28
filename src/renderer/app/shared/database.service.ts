@@ -82,6 +82,21 @@ export class Database {
         })
     }
 
+    update(item:any,nuevo:any) {
+        return new Promise((resolve, reject) => {
+            return this.db.update({_id:item._id},{$set:{name:nuevo}}, ((err:any, NumReplaced:any) => {
+                if ( err )
+                {
+                    reject(err);
+                }
+                else
+                {
+                    resolve(NumReplaced);
+                }
+            }));
+        })
+    }
+
     //---------------------------------------------------------------
     //Collection
     //---------------------------------------------------------------

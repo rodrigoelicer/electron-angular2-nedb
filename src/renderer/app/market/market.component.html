@@ -13,8 +13,26 @@
         <i class="fa fa-usd" aria-hidden="true"></i>
         {{item.price}}
         <button class="btn btn-danger pull-right" (click)="removeItem(item._id)">Delete</button>
+
+        <br><br>
+
+        <div class="row">
+          <div class="col-xs-3">
+            <button class="btn btn-primary" (click)="accessEdit(item)">Edit</button>
+          </div>
+          <div *ngIf="editing == item._id">
+            <div class="col-xs-6">
+              <input type="text" [(ngModel)]="toUpdate" class="form-control" placeholder="name" required>
+            </div>
+            <div class="col-xs-3">
+              <button class="btn btn-warning pull-right" (click)="updateItem(item,toUpdate); endEdit(item)">Update</button>
+            </div>
+          </div>
+        </div><!-- end row edit -->
+
       </li>
     </ul>
+
     <h3 *ngIf="items.length == 0">There's none on the DB!</h3>
 
     <div class="form-group">

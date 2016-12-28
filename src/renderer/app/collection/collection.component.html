@@ -10,6 +10,8 @@
     </ul>
     <h3 *ngIf="collectedItems.length == 0">Start Adding!</h3>
   </div>
-  <input type="text" [(ngModel)]="url">
-  <button class="btn btn-primary" (click)="openLink(url)">Open on Browser</button>
+  <div class="col-xs-6">
+    <input type="text" class="form-control" [(ngModel)]="url">
+    <button class="btn btn-primary" (click)="openLink(url)">Open on Browser</button>    
+  </div>
 </div>
