@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+html, body{
+  padding: 20 20;
+}
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+.item-click{
+  cursor:pointer;
+}
+
+.selected{
+  background-color: #CCDDE2;
+}

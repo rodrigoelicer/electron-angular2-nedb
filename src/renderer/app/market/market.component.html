@@ -1,0 +1,58 @@
+<a [href]="url">
+  <img [src]="angularclassLogo" width="25%">
+</a>
+<hr>
+{{diagnostic}}
+<hr />
+<div class="row">
+  <div class="col-xs-6">
+    <ul class="list-group" *ngIf="items.length>0">
+      <li class="list-group-item" *ngFor="let item of items">
+        <button class="btn btn-success" (click)="onAddToCollection({name:item.name, price:item.price, id_:item._id})">Add</button>
+        {{item.name}}
+        <i class="fa fa-usd" aria-hidden="true"></i>
+        {{item.price}}
+        <button class="btn btn-danger pull-right" (click)="removeItem(item._id)">Delete</button>
+      </li>
+    </ul>
+    <h3 *ngIf="items.length == 0">There's none on the DB!</h3>
+
+    <div class="form-group">
+      <label >Filter by price</label><br>
+      <input type="number" class="form-control" [(ngModel)]="price_filter" name="price_filter" required>
+      <button class="btn btn-default" (click)="findPrice(price_filter)">Search</button>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let price of price_list">
+          {{price.name}}
+        </li>
+      </ul>
+    </div>
+    {{priceA}}
+
+  </div>
+
+  <div class="col-xs-6">
+
+    <form #f="ngForm" (submit)="save(nuevo.name, nuevo.price); f.reset()" >
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label>Name</label><br>
+            <input type="text" class="form-control" [(ngModel)]="nuevo.name" name="name" required/>
+          </div>
+
+          <div class="form-group">
+            <label>Price</label><br>
+            <input type="number" class="form-control" [(ngModel)]="nuevo.price" name="price" required/>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <button type="submit" class="btn btn-default" [disabled]="!f.form.valid">
+            Save Item to DB
+          </button>
+        </div>
+      </div>
+    </form><!-- end form -->
+
+  </div>
+</div>

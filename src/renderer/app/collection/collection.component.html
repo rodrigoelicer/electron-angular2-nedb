@@ -1,0 +1,15 @@
+{{diagnostic}}
+<hr />
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="list-group" *ngIf="collectedItems.length > 0">
+      <li class="list-group-item" *ngFor="let item of collectedItems">
+        <button class="btn btn-danger" (click)="onRemove(item)">Remove</button>
+        {{item.name}}
+      </li>
+    </ul>
+    <h3 *ngIf="collectedItems.length == 0">Start Adding!</h3>
+  </div>
+  <input type="text" [(ngModel)]="url">
+  <button class="btn btn-primary" (click)="openLink(url)">Open on Browser</button>
+</div>
