@@ -5,7 +5,6 @@
 
 ## First Step
 ```bash
-cd electron-testing-app-2/
 npm install
 ```
 
