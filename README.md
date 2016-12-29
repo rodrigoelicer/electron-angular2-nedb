@@ -3,13 +3,9 @@
 ## Requirements
 * [+ Node:6.5.0](https://nodejs.org/en/)
 
-## First Step
+## Usage
 ```bash
 npm install
-```
-
-## Run App with electron
-```bash
 npm start
 ```
 
